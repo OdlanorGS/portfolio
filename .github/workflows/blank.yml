@@ -1,0 +1,44 @@
+name: Auto Deploy Portfolio
+
+on:
+  # Trigger on push or pull request to main
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+  # Trigger weekly CRON job to redeploy (every Monday at 2AM UTC)
+  schedule:
+    - cron: '0 2 * * 1'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - uses: actions/checkout@v4
+
+      # Install Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Build the project
+      - name: Build Project
+        run: npm run build
+
+      # Deploy to GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
