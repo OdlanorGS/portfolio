@@ -1,0 +1,109 @@
+{
+  "personal": {
+    "name": "Your Name",
+    "title": "Software Developer | Designer | Creator",
+    "email": "your.email@example.com",
+    "phone": "+1 (123) 456-7890",
+    "location": "Your City, Country",
+    "bio": "I'm a passionate developer who loves creating beautiful and functional web applications. With expertise in modern web technologies, I transform ideas into reality.",
+    "avatar": "https://via.placeholder.com/200"
+  },
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername",
+    "portfolio": "https://yourwebsite.com"
+  },
+  "about": {
+    "description": "I'm a dedicated software developer with a passion for building exceptional digital experiences. I specialize in full-stack development and love working with modern technologies to solve complex problems.",
+    "highlights": [
+      "5+ years of experience in web development",
+      "Strong focus on user experience and clean code",
+      "Continuous learner and technology enthusiast",
+      "Open source contributor"
+    ]
+  },
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["HTML5", "CSS3", "JavaScript", "React", "Vue.js", "TypeScript"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Python", "Express", "Django", "REST APIs"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "Redis"]
+    },
+    {
+      "category": "Other",
+      "items": ["UI/UX Design", "Agile", "Testing", "CI/CD"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project One",
+      "description": "A full-stack web application that helps users manage their daily tasks with an intuitive interface and powerful features.",
+      "technologies": ["React", "Node.js", "MongoDB", "Express"],
+      "image": "https://via.placeholder.com/400x250",
+      "github": "https://github.com/yourusername/project-one",
+      "demo": "https://project-one-demo.com",
+      "featured": true
+    },
+    {
+      "title": "Project Two",
+      "description": "An e-commerce platform with real-time inventory management and seamless payment integration.",
+      "technologies": ["Vue.js", "Python", "Django", "PostgreSQL"],
+      "image": "https://via.placeholder.com/400x250",
+      "github": "https://github.com/yourusername/project-two",
+      "demo": "https://project-two-demo.com",
+      "featured": true
+    },
+    {
+      "title": "Project Three",
+      "description": "A mobile-responsive dashboard for data visualization and analytics with interactive charts.",
+      "technologies": ["JavaScript", "D3.js", "Express", "MySQL"],
+      "image": "https://via.placeholder.com/400x250",
+      "github": "https://github.com/yourusername/project-three",
+      "demo": "",
+      "featured": false
+    }
+  ],
+  "experience": [
+    {
+      "position": "Senior Software Developer",
+      "company": "Tech Company Inc.",
+      "duration": "2022 - Present",
+      "description": "Lead development of scalable web applications and mentor junior developers.",
+      "achievements": [
+        "Improved application performance by 40%",
+        "Led team of 5 developers on major product launch"
+      ]
+    },
+    {
+      "position": "Software Developer",
+      "company": "Digital Solutions Ltd.",
+      "duration": "2020 - 2022",
+      "description": "Developed and maintained multiple client-facing applications.",
+      "achievements": [
+        "Built RESTful APIs serving 100K+ users",
+        "Implemented automated testing reducing bugs by 60%"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University Name",
+      "year": "2020",
+      "description": "Graduated with honors. Focus on software engineering and algorithms."
+    }
+  ],
+  "theme": {
+    "primaryColor": "#2563eb",
+    "accentColor": "#7c3aed",
+    "backgroundColor": "#ffffff",
+    "textColor": "#1f2937"
+  }
+}
