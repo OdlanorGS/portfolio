@@ -20,10 +20,11 @@
             </button>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -33,23 +34,32 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <img id="hero-avatar" src="" alt="Profile Picture" class="hero-avatar">
-                <h1 id="hero-name" class="hero-name"></h1>
-                <p id="hero-title" class="hero-title"></p>
-                <p id="hero-bio" class="hero-bio"></p>
+                <div class="greeting-text">
+                    <h1 id="greeting-title" class="greeting-title"></h1>
+                    <h2 id="hero-name" class="hero-name"></h2>
+                    <p id="greeting-subtitle" class="greeting-subtitle"></p>
+                </div>
+                <div class="hero-image">
+                    <img id="hero-avatar" src="" alt="Profile Picture" class="hero-avatar">
+                </div>
+            </div>
+            <div class="hero-actions">
                 <div id="hero-social" class="social-links"></div>
-                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a id="resume-link" href="#" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- What I Do Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">What I Do 💻</h2>
             <div class="about-content">
                 <p id="about-description" class="about-description"></p>
-                <ul id="about-highlights" class="highlights-list"></ul>
+                <div id="about-highlights" class="highlights-grid"></div>
             </div>
         </div>
     </section>
@@ -81,8 +91,25 @@
     <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title">Education 🎓</h2>
             <div id="education-container" class="education-list"></div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Achievements & Certifications 🏆</h2>
+            <div id="achievements-container" class="achievements-grid"></div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="section-title">Events & Talks 🎤</h2>
+            <p class="section-subtitle">I love sharing knowledge and being part of the developer community</p>
+            <div id="events-container" class="events-grid"></div>
         </div>
     </section>
 

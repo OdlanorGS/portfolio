@@ -100,10 +100,67 @@
       "description": "Graduated with honors. Focus on software engineering and algorithms."
     }
   ],
+  "events": [
+    {
+      "title": "Tech Conference 2024",
+      "type": "Speaker",
+      "organization": "Tech Summit",
+      "date": "March 2024",
+      "description": "Presented on Modern Web Development practices and scalable architecture patterns.",
+      "link": "https://example.com/event1",
+      "image": "https://via.placeholder.com/400x250"
+    },
+    {
+      "title": "Hackathon Winner",
+      "type": "Participant",
+      "organization": "City Hackathon",
+      "date": "January 2024",
+      "description": "Won first place in the innovation category for developing an AI-powered productivity tool.",
+      "link": "https://example.com/event2",
+      "image": "https://via.placeholder.com/400x250"
+    },
+    {
+      "title": "Workshop: Building with React",
+      "type": "Organizer",
+      "organization": "Local Dev Community",
+      "date": "December 2023",
+      "description": "Organized and led a hands-on workshop teaching React fundamentals to 50+ developers.",
+      "link": "",
+      "image": "https://via.placeholder.com/400x250"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "AWS Certified Solutions Architect",
+      "description": "Professional certification demonstrating expertise in AWS cloud architecture",
+      "date": "2023",
+      "icon": "🏆"
+    },
+    {
+      "title": "Top Contributor - Open Source Project",
+      "description": "Recognized as a top 10 contributor to a major open source framework",
+      "date": "2023",
+      "icon": "⭐"
+    },
+    {
+      "title": "Best Innovation Award",
+      "description": "Received company-wide recognition for innovative solution that reduced costs by 30%",
+      "date": "2022",
+      "icon": "💡"
+    }
+  ],
+  "greeting": {
+    "title": "Hi, I'm",
+    "subtitle": "A passionate developer who loves creating innovative solutions and sharing knowledge with the community.",
+    "resumeLink": "https://example.com/resume.pdf"
+  },
   "theme": {
-    "primaryColor": "#2563eb",
-    "accentColor": "#7c3aed",
+    "primaryColor": "#55198b",
+    "accentColor": "#8c43ce",
     "backgroundColor": "#ffffff",
-    "textColor": "#1f2937"
+    "textColor": "#000000",
+    "subtitleColor": "#868e96",
+    "cardColor": "#f5f2f4",
+    "darkMode": false
   }
 }
