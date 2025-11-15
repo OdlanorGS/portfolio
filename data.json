@@ -155,9 +155,12 @@
     "Python Coding Specialist"
   ],
   "theme": {
-    "primaryColor": "#2563eb",
-    "accentColor": "#7c3aed",
+    "primaryColor": "#55198b",
+    "accentColor": "#8c43ce",
     "backgroundColor": "#ffffff",
-    "textColor": "#1f2937"
+    "textColor": "#000000",
+    "subtitleColor": "#868e96",
+    "cardColor": "#f5f2f4",
+    "darkMode": false
   }
 }
