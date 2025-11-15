@@ -17,7 +17,7 @@ async function loadPortfolioData() {
         populateExperience(data.experience);
         populateEducation(data.education);
         populateAchievements(data.achievements);
-        populateEvents(data.events);
+        populateLinkedInEvents(data.linkedInEvents);
         populateContact(data.personal);
         populateFooter(data.personal, data.social);
 
@@ -183,27 +183,50 @@ function populateAchievements(achievements) {
     `).join('');
 }
 
-// Populate Events Section
-function populateEvents(events) {
+// Populate LinkedIn Events Section
+function populateLinkedInEvents(events) {
     const container = document.getElementById('events-container');
 
     if (!events || events.length === 0) {
-        container.innerHTML = '<p style="text-align: center; color: var(--subtitle-color);">No events added yet.</p>';
+        container.innerHTML = '<p style="text-align: center; color: var(--subtitle-color);">No events added yet. Add your LinkedIn events in data.json!</p>';
         return;
     }
 
     container.innerHTML = events.map(event => `
-        <div class="event-card">
-            ${event.image ? `<img src="${event.image}" alt="${event.title}" class="event-image" loading="lazy">` : ''}
-            <div class="event-content">
-                <span class="event-type">${event.type || 'Event'}</span>
-                <h3 class="event-title">${event.title}</h3>
-                <div class="event-organization">${event.organization}</div>
-                <div class="event-date"><i class="far fa-calendar"></i> ${event.date}</div>
-                <p class="event-description">${event.description}</p>
-                ${event.link ? `<a href="${event.link}" target="_blank" rel="noopener noreferrer" class="event-link">
-                    <i class="fas fa-link"></i> View Event
-                </a>` : ''}
+        <div class="linkedin-event-card">
+            ${event.image ? `
+                <div class="linkedin-event-image-wrapper">
+                    <img src="${event.image}" alt="${event.title}" class="linkedin-event-image" loading="lazy">
+                    <span class="linkedin-badge"><i class="fab fa-linkedin"></i></span>
+                </div>
+            ` : ''}
+            <div class="linkedin-event-content">
+                <div class="event-header">
+                    <span class="event-type-badge ${event.type.toLowerCase()}">${event.type || 'Event'}</span>
+                    ${event.attendees ? `<span class="event-attendees"><i class="fas fa-users"></i> ${event.attendees}</span>` : ''}
+                </div>
+                <h3 class="linkedin-event-title">${event.title}</h3>
+                <div class="linkedin-event-meta">
+                    <div class="event-organization">
+                        <i class="fas fa-building"></i> ${event.organization}
+                    </div>
+                    <div class="event-date">
+                        <i class="far fa-calendar"></i> ${event.date}
+                    </div>
+                    ${event.location ? `
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i> ${event.location}
+                        </div>
+                    ` : ''}
+                </div>
+                <p class="linkedin-event-description">${event.description}</p>
+                <div class="linkedin-event-actions">
+                    ${event.linkedInUrl ? `
+                        <a href="${event.linkedInUrl}" target="_blank" rel="noopener noreferrer" class="linkedin-event-link">
+                            <i class="fab fa-linkedin"></i> View on LinkedIn
+                        </a>
+                    ` : ''}
+                </div>
             </div>
         </div>
     `).join('');
