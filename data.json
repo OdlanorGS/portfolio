@@ -1,159 +1,159 @@
 {
   "personal": {
-    "name": "Your Name",
-    "title": "Software Developer | Designer | Creator",
-    "email": "your.email@example.com",
-    "phone": "+1 (123) 456-7890",
-    "location": "Your City, Country",
-    "bio": "I'm a passionate developer who loves creating beautiful and functional web applications. With expertise in modern web technologies, I transform ideas into reality.",
+    "name": "Ronaldo Garcia Sevilla",
+    "title": "Data Scientist | AI Engineer | Analytics Developer",
+    "email": "lengmogs@gmail.com",
+    "phone": "(786) 398-2041",
+    "location": "Miami, FL",
+    "bio": "Data Scientist and AI practitioner passionate about building analytics solutions, automating workflows, and transforming complex data into actionable insights. Experienced in Python, cloud computing, machine learning, and enterprise operations.",
     "avatar": "https://via.placeholder.com/200"
   },
   "social": {
     "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/yourusername",
-    "twitter": "https://twitter.com/yourusername",
-    "portfolio": "https://yourwebsite.com"
+    "linkedin": "https://www.linkedin.com/in/ronaldo-garcia001",
+    "twitter": "",
+    "portfolio": ""
   },
   "about": {
-    "description": "I'm a dedicated software developer with a passion for building exceptional digital experiences. I specialize in full-stack development and love working with modern technologies to solve complex problems.",
+    "description": "I am a Data Science & AI graduate student specializing in machine learning, automation, analytics engineering, and cloud technologies. My work spans enterprise sourcing analytics, workflow automation, ERP data operations, and academic tutoring. I focus on building practical, scalable, and efficient solutions that support decision-making across business and technical environments.",
     "highlights": [
-      "5+ years of experience in web development",
-      "Strong focus on user experience and clean code",
-      "Continuous learner and technology enthusiast",
-      "Open source contributor"
+      "Global Sourcing Analyst at Costa Farms",
+      "Experience with ERP systems (Sage X3, SAMII) and automation (Power Automate, SharePoint)",
+      "Strong background in Python, SQL, AWS, machine learning, and data visualization",
+      "Dean’s List every semester; Changemaker of the Year & CAA Bronze Award",
+      "Awarded eMerge Americas Rising Star (2024)"
     ]
   },
   "skills": [
     {
-      "category": "Frontend",
-      "items": ["HTML5", "CSS3", "JavaScript", "React", "Vue.js", "TypeScript"]
+      "category": "Programming Languages",
+      "items": ["Python", "SQL", "R", "C++", "JavaScript (basic)"]
     },
     {
-      "category": "Backend",
-      "items": ["Node.js", "Python", "Express", "Django", "REST APIs"]
+      "category": "Data & Analytics",
+      "items": ["Power BI", "Tableau", "Excel (Advanced)", "ETL", "Data Mining", "Machine Learning", "Deep Learning", "NLP"]
     },
     {
-      "category": "Tools & Technologies",
-      "items": ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "Redis"]
+      "category": "Cloud & DevOps",
+      "items": ["AWS", "Lambda", "S3", "EC2", "CloudFormation", "Serverless Design"]
     },
     {
-      "category": "Other",
-      "items": ["UI/UX Design", "Agile", "Testing", "CI/CD"]
+      "category": "Tools & Platforms",
+      "items": ["Power Automate", "SharePoint", "Sage X3", "SAMII", "Linux", "TensorFlow", "Git"]
+    },
+    {
+      "category": "Soft Skills",
+      "items": ["Leadership", "Problem-Solving", "Communication", "Adaptability", "Teamwork", "Organization"]
     }
   ],
   "projects": [
     {
-      "title": "Project One",
-      "description": "A full-stack web application that helps users manage their daily tasks with an intuitive interface and powerful features.",
-      "technologies": ["React", "Node.js", "MongoDB", "Express"],
+      "title": "Savings Tracking & Automation Toolkit",
+      "description": "A suite of Python and Excel-based tools developed for Costa Farms sourcing managers to calculate realized vs. expected savings, automate manual workflows, and streamline cost-optimization analysis. Includes converter tools, pivot automation, validation modules, and UI dashboards.",
+      "technologies": ["Python", "Pandas", "Tkinter", "Excel VBA", "Power Automate"],
       "image": "https://via.placeholder.com/400x250",
-      "github": "https://github.com/yourusername/project-one",
-      "demo": "https://project-one-demo.com",
-      "featured": true
-    },
-    {
-      "title": "Project Two",
-      "description": "An e-commerce platform with real-time inventory management and seamless payment integration.",
-      "technologies": ["Vue.js", "Python", "Django", "PostgreSQL"],
-      "image": "https://via.placeholder.com/400x250",
-      "github": "https://github.com/yourusername/project-two",
-      "demo": "https://project-two-demo.com",
-      "featured": true
-    },
-    {
-      "title": "Project Three",
-      "description": "A mobile-responsive dashboard for data visualization and analytics with interactive charts.",
-      "technologies": ["JavaScript", "D3.js", "Express", "MySQL"],
-      "image": "https://via.placeholder.com/400x250",
-      "github": "https://github.com/yourusername/project-three",
+      "github": "",
       "demo": "",
+      "featured": true
+    },
+    {
+      "title": "QR-Code Spec Sheet Automation System",
+      "description": "Developed a workflow enabling teams to transition from manual product lookup to a QR-based system for sourcing and receiving. Automates ingestion of product attributes, generates labeled PDFs, and links QR codes for vendor and internal use.",
+      "technologies": ["Power Automate", "SharePoint", "Python", "APIs"],
+      "image": "https://via.placeholder.com/400x250",
+      "github": "",
+      "demo": "",
+      "featured": true
+    },
+    {
+      "title": "AWS Cloud Architecture Capstone",
+      "description": "Designed and deployed a cloud architecture solution as part of a team project, implementing AWS services for a scalable system and documenting all components for final presentation.",
+      "technologies": ["AWS", "CloudFormation", "S3", "Lambda"],
+      "image": "https://via.placeholder.com/400x250",
+      "github": "",
+      "demo": "https://drive.google.com/drive/folders/1muz8hS9jukciQCREDHbM1QnJGByv8E7t",
       "featured": false
     }
   ],
   "experience": [
     {
-      "position": "Senior Software Developer",
-      "company": "Tech Company Inc.",
-      "duration": "2022 - Present",
-      "description": "Lead development of scalable web applications and mentor junior developers.",
+      "position": "Global Sourcing Analyst",
+      "company": "Costa Farms",
+      "duration": "Oct 2025 – Present",
+      "description": "Supporting enterprise sourcing operations by building analytics tools and maintaining data accuracy across ERP systems.",
       "achievements": [
-        "Improved application performance by 40%",
-        "Led team of 5 developers on major product launch"
+        "Developed Excel-based and Python automation tools to support cost optimization and savings analysis",
+        "Managed sourcing data and workflows across Sage X3 and vendor/product systems"
       ]
     },
     {
-      "position": "Software Developer",
-      "company": "Digital Solutions Ltd.",
-      "duration": "2020 - 2022",
-      "description": "Developed and maintained multiple client-facing applications.",
+      "position": "Travel & Procurement Intern",
+      "company": "Bank Santander",
+      "duration": "Aug 2025 – Oct 2025",
+      "description": "Provided operational and analytical support for travel procedures and cost reconciliation.",
       "achievements": [
-        "Built RESTful APIs serving 100K+ users",
-        "Implemented automated testing reducing bugs by 60%"
+        "Built Excel VBA tools to identify subset-sum matches for travel cost reconciliation",
+        "Prepared cost-trend reports and supported travel policy updates"
+      ]
+    },
+    {
+      "position": "Part-Time EnTec Tutor",
+      "company": "Miami Dade College",
+      "duration": "Dec 2024 – Aug 2025",
+      "description": "Tutored students in foundational and advanced analytics and programming topics.",
+      "achievements": [
+        "Provided tutoring for Python, SQL, R, analytics, and cloud fundamentals",
+        "Designed and led Python workshops improving student proficiency"
+      ]
+    },
+    {
+      "position": "Sourcing Analyst Intern",
+      "company": "Costa Farms",
+      "duration": "Jun 2025 – Aug 2025",
+      "description": "Built internal automation solutions using ERP data and visualization tools.",
+      "achievements": [
+        "Automated product information search across shipments using QR-based workflows",
+        "Used SAMII/Sage ERP data to streamline conversions and calculations"
+      ]
+    },
+    {
+      "position": "Civic Ambassador & SL Assistant",
+      "company": "Miami Dade College Student Life",
+      "duration": "Apr 2023 – Apr 2024",
+      "description": "Led civic engagement initiatives, academic projects, and new student outreach.",
+      "achievements": [
+        "Delivered weekly presentations on democratic engagement and student resources",
+        "Created data collection processes for peer mentor impact analysis"
       ]
     }
   ],
   "education": [
     {
-      "degree": "Bachelor of Science in Computer Science",
-      "institution": "University Name",
-      "year": "2020",
-      "description": "Graduated with honors. Focus on software engineering and algorithms."
+      "degree": "Master of Science in Data Science & Artificial Intelligence",
+      "institution": "Florida International University",
+      "year": "Expected Apr 2026",
+      "description": "Dean’s List every semester, GPA 3.87"
+    },
+    {
+      "degree": "Bachelor of Science in Data Analytics",
+      "institution": "Miami Dade College",
+      "year": "2024",
+      "description": "Highest Honors (3.96 GPA). Recipient of EmTech REP Grant, Padron Medal Scholarship, CAA Bronze Award, Changemaker of the Year, and eMerge Americas Rising Star."
+    },
+    {
+      "degree": "Associate of Science in Business Intelligence",
+      "institution": "Miami Dade College",
+      "year": "2023",
+      "description": "Highest Honors."
     }
   ],
-  "events": [
-    {
-      "title": "Tech Conference 2024",
-      "type": "Speaker",
-      "organization": "Tech Summit",
-      "date": "March 2024",
-      "description": "Presented on Modern Web Development practices and scalable architecture patterns.",
-      "link": "https://example.com/event1",
-      "image": "https://via.placeholder.com/400x250"
-    },
-    {
-      "title": "Hackathon Winner",
-      "type": "Participant",
-      "organization": "City Hackathon",
-      "date": "January 2024",
-      "description": "Won first place in the innovation category for developing an AI-powered productivity tool.",
-      "link": "https://example.com/event2",
-      "image": "https://via.placeholder.com/400x250"
-    },
-    {
-      "title": "Workshop: Building with React",
-      "type": "Organizer",
-      "organization": "Local Dev Community",
-      "date": "December 2023",
-      "description": "Organized and led a hands-on workshop teaching React fundamentals to 50+ developers.",
-      "link": "",
-      "image": "https://via.placeholder.com/400x250"
-    }
+  "certifications": [
+    "AWS Certified Solutions Architect – Associate",
+    "AWS Certified Cloud Practitioner",
+    "CCC Enterprise Cloud Computing",
+    "CCC Business Intelligence Professional",
+    "Python Coding Specialist"
   ],
-  "achievements": [
-    {
-      "title": "AWS Certified Solutions Architect",
-      "description": "Professional certification demonstrating expertise in AWS cloud architecture",
-      "date": "2023",
-      "icon": "🏆"
-    },
-    {
-      "title": "Top Contributor - Open Source Project",
-      "description": "Recognized as a top 10 contributor to a major open source framework",
-      "date": "2023",
-      "icon": "⭐"
-    },
-    {
-      "title": "Best Innovation Award",
-      "description": "Received company-wide recognition for innovative solution that reduced costs by 30%",
-      "date": "2022",
-      "icon": "💡"
-    }
-  ],
-  "greeting": {
-    "title": "Hi, I'm",
-    "subtitle": "A passionate developer who loves creating innovative solutions and sharing knowledge with the community.",
-    "resumeLink": "https://example.com/resume.pdf"
-  },
   "theme": {
     "primaryColor": "#55198b",
     "accentColor": "#8c43ce",
