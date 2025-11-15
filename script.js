@@ -202,7 +202,7 @@ function populateLinkedInEvents(events) {
             ` : ''}
             <div class="linkedin-event-content">
                 <div class="event-header">
-                    <span class="event-type-badge ${event.type.toLowerCase()}">${event.type || 'Event'}</span>
+                    <span class="event-type-badge ${(event.type || 'event').toLowerCase()}">${event.type || 'Event'}</span>
                     ${event.attendees ? `<span class="event-attendees"><i class="fas fa-users"></i> ${event.attendees}</span>` : ''}
                 </div>
                 <h3 class="linkedin-event-title">${event.title}</h3>
