@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Test</title>
+</head>
+<body>
+    <h1 id="status">Testing...</h1>
+    <pre id="output"></pre>
+    <script>
+        async function test() {
+            const output = document.getElementById('output');
+            const status = document.getElementById('status');
+            try {
+                output.textContent += 'Fetching data.json...\n';
+                const response = await fetch('./data.json');
+                output.textContent += 'Response status: ' + response.status + '\n';
+
+                const data = await response.json();
+                output.textContent += 'JSON parsed successfully\n';
+                output.textContent += 'Name: ' + data.personal.name + '\n';
+                output.textContent += 'Greeting exists: ' + (data.greeting ? 'yes' : 'no') + '\n';
+                output.textContent += 'LinkedIn events: ' + (data.linkedInEvents ? data.linkedInEvents.length : 0) + '\n';
+
+                status.textContent = 'SUCCESS - Data loads correctly!';
+                status.style.color = 'green';
+            } catch (error) {
+                status.textContent = 'ERROR: ' + error.message;
+                status.style.color = 'red';
+                output.textContent += '\nError: ' + error.stack;
+            }
+        }
+        test();
+    </script>
+</body>
+</html>
