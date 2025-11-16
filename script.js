@@ -4,6 +4,11 @@
 async function loadPortfolioData() {
     try {
         const response = await fetch('data.json');
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
 
         // Apply theme colors
@@ -24,6 +29,7 @@ async function loadPortfolioData() {
     } catch (error) {
         console.error('Error loading portfolio data:', error);
         showErrorMessage();
+        throw error; // Re-throw to prevent .then() from executing
     }
 }
 
@@ -451,20 +457,26 @@ function setupLazyLoading() {
 
 // Initialize the portfolio
 document.addEventListener('DOMContentLoaded', () => {
-    loadPortfolioData().then(() => {
-        // Setup all interactive features after data is loaded
-        setupMobileNav();
-        setupSmoothScrolling();
-        setupNavbarScrollEffect();
-        setupCardEffects();
+    loadPortfolioData()
+        .then(() => {
+            // Setup all interactive features after data is loaded
+            setupMobileNav();
+            setupSmoothScrolling();
+            setupNavbarScrollEffect();
+            setupCardEffects();
 
-        // Setup animations with delay
-        setTimeout(() => {
-            setupScrollAnimations();
-            setupTypingEffect();
-            setupLazyLoading();
-        }, 300);
-    });
+            // Setup animations with delay
+            setTimeout(() => {
+                setupScrollAnimations();
+                setupTypingEffect();
+                setupLazyLoading();
+            }, 300);
+        })
+        .catch(error => {
+            // Error is already handled by loadPortfolioData's catch block
+            // This prevents the then() block from running after an error
+            console.error('Portfolio initialization failed:', error);
+        });
 });
 
 // Handle page visibility change
