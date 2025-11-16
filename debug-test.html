@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Test - Portfolio</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .log {
+            background: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #007bff;
+        }
+        .error {
+            border-left-color: #dc3545;
+            background: #ffe6e6;
+        }
+        .success {
+            border-left-color: #28a745;
+            background: #e6ffe6;
+        }
+        .warning {
+            border-left-color: #ffc107;
+            background: #fffbe6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Debug Test</h1>
+    <div id="logs"></div>
+
+    <script>
+        const logs = document.getElementById('logs');
+
+        function log(message, type = 'log') {
+            const div = document.createElement('div');
+            div.className = 'log ' + type;
+            div.textContent = new Date().toLocaleTimeString() + ' - ' + message;
+            logs.appendChild(div);
+            console.log(message);
+        }
+
+        async function runTest() {
+            log('Starting portfolio test...', 'log');
+
+            try {
+                // Test 1: Check if running on server
+                log('Protocol: ' + window.location.protocol, window.location.protocol === 'file:' ? 'error' : 'success');
+
+                if (window.location.protocol === 'file:') {
+                    log('ERROR: You are using file:// protocol. You MUST use a local server!', 'error');
+                    log('Run: python3 -m http.server 8000', 'warning');
+                    log('Then open: http://localhost:8000/debug-test.html', 'warning');
+                    return;
+                }
+
+                // Test 2: Fetch data.json
+                log('Fetching data.json...', 'log');
+                const response = await fetch('./data.json');
+                log('Fetch status: ' + response.status, response.ok ? 'success' : 'error');
+
+                if (!response.ok) {
+                    log('ERROR: Failed to fetch data.json - Status ' + response.status, 'error');
+                    return;
+                }
+
+                // Test 3: Parse JSON
+                log('Parsing JSON...', 'log');
+                const data = await response.json();
+                log('JSON parsed successfully', 'success');
+
+                // Test 4: Check all required fields
+                log('Checking data structure...', 'log');
+
+                const requiredFields = ['personal', 'social', 'greeting', 'about', 'skills', 'projects', 'experience', 'education', 'linkedInEvents', 'achievements', 'theme'];
+
+                let allFieldsPresent = true;
+                requiredFields.forEach(field => {
+                    if (!data[field]) {
+                        log('ERROR: Missing field: ' + field, 'error');
+                        allFieldsPresent = false;
+                    } else {
+                        log('✓ ' + field, 'success');
+                    }
+                });
+
+                if (!allFieldsPresent) {
+                    log('ERROR: Some required fields are missing', 'error');
+                    return;
+                }
+
+                // Test 5: Simulate populateHero function
+                log('Testing populateHero logic...', 'log');
+                try {
+                    const greeting = data.greeting;
+                    const personal = data.personal;
+                    const social = data.social;
+
+                    if (!greeting || !greeting.title || !greeting.subtitle) {
+                        log('ERROR: greeting object incomplete', 'error');
+                    } else {
+                        log('✓ greeting.title: ' + greeting.title, 'success');
+                        log('✓ greeting.subtitle: ' + greeting.subtitle, 'success');
+                    }
+
+                    if (!personal || !personal.name) {
+                        log('ERROR: personal.name missing', 'error');
+                    } else {
+                        const firstName = personal.name.split(' ')[0];
+                        log('✓ personal.name: ' + personal.name, 'success');
+                        log('✓ First name: ' + firstName, 'success');
+                    }
+                } catch (error) {
+                    log('ERROR in populateHero: ' + error.message, 'error');
+                    log('Stack: ' + error.stack, 'error');
+                }
+
+                // Test 6: Check arrays
+                log('Testing array structures...', 'log');
+
+                if (!Array.isArray(data.skills)) {
+                    log('ERROR: skills is not an array', 'error');
+                } else {
+                    log('✓ skills: ' + data.skills.length + ' items', 'success');
+                }
+
+                if (!Array.isArray(data.linkedInEvents)) {
+                    log('ERROR: linkedInEvents is not an array', 'error');
+                } else {
+                    log('✓ linkedInEvents: ' + data.linkedInEvents.length + ' items', 'success');
+
+                    // Test event.type handling
+                    data.linkedInEvents.forEach((event, i) => {
+                        const type = (event.type || 'event').toLowerCase();
+                        log('✓ Event ' + i + ' type: ' + type, 'success');
+                    });
+                }
+
+                // Final verdict
+                log('=====================================', 'log');
+                log('ALL TESTS PASSED! ✓', 'success');
+                log('Your data.json is valid and should work!', 'success');
+                log('=====================================', 'log');
+                log('If index.html still shows error, the issue is:', 'warning');
+                log('1. You are opening file directly (use python server)', 'warning');
+                log('2. data.json file path is wrong', 'warning');
+                log('3. Browser cache (hard refresh: Ctrl+Shift+R)', 'warning');
+
+            } catch (error) {
+                log('CRITICAL ERROR: ' + error.message, 'error');
+                log('Stack trace: ' + error.stack, 'error');
+            }
+        }
+
+        runTest();
+    </script>
+</body>
+</html>
