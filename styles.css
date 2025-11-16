@@ -654,88 +654,181 @@ body {
     font-size: 0.95rem;
 }
 
-/* ========== Events Section ========== */
+/* ========== LinkedIn Events Section ========== */
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 2.5rem;
 }
 
-.event-card {
+.linkedin-event-card {
     background: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
-.event-card:hover {
+.linkedin-event-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 35px var(--hover-shadow);
+    border-color: #0077b5;
 }
 
-.event-image {
+.linkedin-event-image-wrapper {
+    position: relative;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 220px;
+    overflow: hidden;
+    background: var(--card-bg);
 }
 
-.event-content {
+.linkedin-event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.linkedin-event-card:hover .linkedin-event-image {
+    transform: scale(1.05);
+}
+
+.linkedin-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    background: #0077b5;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.linkedin-event-content {
     padding: 2rem;
 }
 
-.event-type {
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.event-type-badge {
     display: inline-block;
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1.2rem;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.event-type-badge.speaker {
+    background: linear-gradient(135deg, #0077b5, #00a0dc);
+}
+
+.event-type-badge.participant {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.event-type-badge.organizer {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+}
+
+.event-attendees {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.9rem;
+    background: var(--card-bg);
+    color: var(--text-color);
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 1rem;
 }
 
-.event-title {
+.linkedin-event-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-color);
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.linkedin-event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.linkedin-event-meta > div {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--subtitle-color);
+    font-size: 0.95rem;
+}
+
+.linkedin-event-meta i {
+    width: 18px;
+    color: var(--primary-color);
+    font-size: 1rem;
 }
 
 .event-organization {
-    color: var(--primary-color);
+    color: var(--text-color);
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
 }
 
-.event-date {
-    color: var(--subtitle-color);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-}
-
-.event-description {
+.linkedin-event-description {
     color: var(--subtitle-color);
     line-height: 1.7;
     margin-bottom: 1.5rem;
     font-size: 1rem;
 }
 
-.event-link {
-    display: inline-block;
-    padding: 0.7rem 1.5rem;
-    background: var(--card-bg);
-    color: var(--primary-color);
+.linkedin-event-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.linkedin-event-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.6rem;
+    background: #0077b5;
+    color: white;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    font-size: 0.95rem;
 }
 
-.event-link:hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    color: white;
+.linkedin-event-link:hover {
+    background: #006399;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+}
+
+.linkedin-event-link i {
+    font-size: 1.1rem;
 }
 
 /* ========== Contact Section ========== */

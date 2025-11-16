@@ -20,7 +20,7 @@
       "Global Sourcing Analyst at Costa Farms",
       "Experience with ERP systems (Sage X3, SAMII) and automation (Power Automate, SharePoint)",
       "Strong background in Python, SQL, AWS, machine learning, and data visualization",
-      "Dean’s List every semester; Changemaker of the Year & CAA Bronze Award",
+      "Dean's List every semester; Changemaker of the Year & CAA Bronze Award",
       "Awarded eMerge Americas Rising Star (2024)"
     ]
   },
@@ -132,7 +132,7 @@
       "degree": "Master of Science in Data Science & Artificial Intelligence",
       "institution": "Florida International University",
       "year": "Expected Apr 2026",
-      "description": "Dean’s List every semester, GPA 3.87"
+      "description": "Dean's List every semester, GPA 3.87"
     },
     {
       "degree": "Bachelor of Science in Data Analytics",
@@ -147,13 +147,68 @@
       "description": "Highest Honors."
     }
   ],
-  "certifications": [
-    "AWS Certified Solutions Architect – Associate",
-    "AWS Certified Cloud Practitioner",
-    "CCC Enterprise Cloud Computing",
-    "CCC Business Intelligence Professional",
-    "Python Coding Specialist"
+  "linkedInEvents": [
+    {
+      "title": "Your LinkedIn Event Title",
+      "type": "Speaker",
+      "organization": "Event Organization",
+      "date": "Event Date",
+      "location": "Event Location",
+      "description": "Add your LinkedIn event description here. Replace this with your actual event details.",
+      "linkedInUrl": "https://www.linkedin.com/events/your-event-id-here/",
+      "image": "https://via.placeholder.com/600x400/55198b/ffffff?text=Add+Your+Event",
+      "attendees": "50+"
+    }
   ],
+  "achievements": [
+    {
+      "title": "AWS Certified Solutions Architect – Associate",
+      "description": "Professional certification demonstrating expertise in AWS cloud architecture and solution design",
+      "date": "2024",
+      "icon": "☁️"
+    },
+    {
+      "title": "AWS Certified Cloud Practitioner",
+      "description": "Foundational certification in AWS cloud computing services and principles",
+      "date": "2024",
+      "icon": "🏆"
+    },
+    {
+      "title": "CCC Enterprise Cloud Computing",
+      "description": "Credential in enterprise cloud computing practices and technologies",
+      "date": "2024",
+      "icon": "💻"
+    },
+    {
+      "title": "CCC Business Intelligence Professional",
+      "description": "Professional certification in business intelligence tools and analytics",
+      "date": "2024",
+      "icon": "📊"
+    },
+    {
+      "title": "Python Coding Specialist",
+      "description": "Certification demonstrating proficiency in Python programming",
+      "date": "2024",
+      "icon": "🐍"
+    },
+    {
+      "title": "eMerge Americas Rising Star",
+      "description": "Recognized as Rising Star at eMerge Americas 2024 technology conference",
+      "date": "2024",
+      "icon": "⭐"
+    },
+    {
+      "title": "Changemaker of the Year",
+      "description": "Award for outstanding civic engagement and leadership initiatives",
+      "date": "2024",
+      "icon": "🌟"
+    }
+  ],
+  "greeting": {
+    "title": "Hi, I'm",
+    "subtitle": "A Data Science & AI graduate student specializing in machine learning, automation, and analytics engineering. I build practical solutions that transform complex data into actionable insights.",
+    "resumeLink": "https://example.com/resume.pdf"
+  },
   "theme": {
     "primaryColor": "#55198b",
     "accentColor": "#8c43ce",

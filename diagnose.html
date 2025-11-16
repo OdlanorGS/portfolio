@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Diagnostic Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        h1 { color: #333; }
+        pre { background: white; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        .solution { background: #e7f3ff; padding: 15px; border-left: 4px solid #2196F3; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Portfolio Diagnostic Tool</h1>
+    <div id="results"></div>
+
+    <script>
+        const results = document.getElementById('results');
+
+        function addStatus(type, title, message) {
+            const div = document.createElement('div');
+            div.className = 'status ' + type;
+            div.innerHTML = '<strong>' + title + '</strong><br>' + message;
+            results.appendChild(div);
+        }
+
+        async function diagnose() {
+            // Test 1: Check if running on a server
+            const protocol = window.location.protocol;
+            if (protocol === 'file:') {
+                addStatus('error', '❌ PROBLEM FOUND: File Protocol',
+                    'You are opening the file directly (file:/// protocol). This will NOT work due to CORS security restrictions.');
+                addStatus('warning', '🔧 SOLUTION Required', `
+                    <div class="solution">
+                        <strong>You MUST use a local server. Choose one option:</strong><br><br>
+                        <strong>Option 1 - Python (Easiest):</strong><br>
+                        1. Open Terminal/Command Prompt<br>
+                        2. Navigate to portfolio folder: <code>cd /path/to/portfolio</code><br>
+                        3. Run: <code>python3 -m http.server 8000</code><br>
+                        4. Open: <a href="http://localhost:8000">http://localhost:8000</a><br><br>
+
+                        <strong>Option 2 - VS Code Live Server:</strong><br>
+                        1. Install VS Code<br>
+                        2. Install "Live Server" extension<br>
+                        3. Right-click index.html → "Open with Live Server"
+                    </div>
+                `);
+                return; // Stop other tests
+            } else {
+                addStatus('success', '✅ Server Detected', 'Running on: ' + protocol + '//' + window.location.host);
+            }
+
+            // Test 2: Try to fetch data.json
+            try {
+                addStatus('info', '⏳ Testing data.json fetch...', 'Attempting to load data.json');
+                const response = await fetch('./data.json');
+
+                if (!response.ok) {
+                    addStatus('error', '❌ Fetch Failed', 'HTTP Status: ' + response.status + ' - File not found or server error');
+                    return;
+                }
+
+                addStatus('success', '✅ data.json fetched successfully', 'HTTP Status: ' + response.status);
+
+                // Test 3: Parse JSON
+                const data = await response.json();
+                addStatus('success', '✅ JSON parsed successfully', 'Data structure is valid');
+
+                // Test 4: Check required fields
+                const requiredFields = ['personal', 'social', 'greeting', 'about', 'skills', 'projects', 'experience', 'education', 'linkedInEvents', 'achievements', 'theme'];
+                let missingFields = [];
+
+                requiredFields.forEach(field => {
+                    if (!data[field]) {
+                        missingFields.push(field);
+                    }
+                });
+
+                if (missingFields.length > 0) {
+                    addStatus('error', '❌ Missing Required Fields', 'Missing: ' + missingFields.join(', '));
+                } else {
+                    addStatus('success', '✅ All required fields present', 'Data structure is complete');
+                }
+
+                // Test 5: Display data sample
+                addStatus('info', '📊 Data Sample', `
+                    <pre>Name: ${data.personal.name}
+Email: ${data.personal.email}
+LinkedIn Events: ${data.linkedInEvents.length}
+Achievements: ${data.achievements.length}
+Projects: ${data.projects.length}</pre>
+                `);
+
+                // Final verdict
+                addStatus('success', '✅ ALL TESTS PASSED',
+                    'Your portfolio should work! If you still see errors, check the browser console (F12) for JavaScript errors.');
+
+            } catch (error) {
+                addStatus('error', '❌ Error Loading Data', error.message + '<br><br>Stack trace:<br><pre>' + error.stack + '</pre>');
+            }
+        }
+
+        diagnose();
+    </script>
+</body>
+</html>
